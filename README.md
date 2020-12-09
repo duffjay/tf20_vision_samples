@@ -13,6 +13,7 @@ install Jupyter
 conda activate tf20  
 python -m ipykernel install --user --name tf20 --display-name "Python37 (tf20)"
 pip install opencv-python 
+conda install matplotlib
 
 #### Required with the Master Computer Vision Book
 These packages are not necessarily used with your final applications.    If you are creating a more streamlined python environment, you may omit them or think hard about what you need (e.g. PIL or opencv?)  
