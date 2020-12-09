@@ -3,8 +3,22 @@
 ## Python
 3.7  
 Anaconda  
-create environment (tf20) using anaconda-navigator, Python 3.7
 
+### using anaconda-navigator
+create environment (tf20) Python 3.7  
+install Jupyter
+
+### command prompt
+
+conda activate tf20  
+python -m ipykernel install --user --name tf20 --display-name "Python37 (tf20)"
+pip install opencv-python 
+
+#### Required with the Master Computer Vision Book
+These packages are not necessarily used with your final applications.    If you are creating a more streamlined python environment, you may omit them or think hard about what you need (e.g. PIL or opencv?)  
+
+conda install pillow  
+conda install ImageHash
 
 ## Master Computer Vision with TensorFlow 2.x
 
