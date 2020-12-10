@@ -20,6 +20,8 @@ These packages are not necessarily used with your final applications.    If you 
 
 conda install pillow  
 conda install ImageHash
+pip install scikit-image  
+
 
 ## Master Computer Vision with TensorFlow 2.x
 
