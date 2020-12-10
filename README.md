@@ -34,6 +34,7 @@ conda install tensorflow-gpu
 - tf 2.2
 - tensorboard
 
+
 ### command prompt
 
 conda activate tf20  
