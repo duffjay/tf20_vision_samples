@@ -49,6 +49,7 @@ conda install pillow
 conda install ImageHash
 pip install scikit-image  
 conda install pandas  
+conda install keras  
 
 
 ## Master Computer Vision with TensorFlow 2.x
