@@ -8,10 +8,12 @@ Anaconda
 
 ### tf22
 Anaconda managed  
+```
 conda create -n tf22 python=3.7  
-conda activate tf22
-using anaconda-naviagor, install jupyter
-python -m ipykernel install --user --name tf22 --display-name "Python37 (tf22)"
+conda activate tf22  
+using anaconda-naviagor, install jupyter  
+python -m ipykernel install --user --name tf22 --display-name "Python37 (tf22)"  
+```
 create a jupyter notebook (from tf22) to verify
 
 ### tf23
