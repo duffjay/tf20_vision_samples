@@ -102,6 +102,8 @@ ls /home/ec2-user/SageMaker/tensorflow/models/research/
 default is Pascal VOC, you can use COCO - see the note in the tutorial
 
 #### Object Detection API
+
+Watch the console!!! when you do this, it will uninstall TF 2.2 and install TF 2.4!!
 ```
 cd /home/ec2-user/SageMaker/tensorflow/models/research/
 ls -l
