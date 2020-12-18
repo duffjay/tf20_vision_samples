@@ -69,8 +69,48 @@ kaggle
 ## Tensflow 2.x Object Detection Tutorial
 
 ### SageMaker
+
+Install the /models 
 ```
 mkdir /home/ec2-user/SageMaker/tensorflow
 cd /home/ec2-user/SageMaker/tensorflow
 git clone https://github.com/tensorflow/models.git
 ```
+#### Compile Protobuf
+on SageMaker, the compiler is already installed, v3.13.  So, you can skip the installation!
+
+```
+cd models/research/
+protoc object_detection/protos/*.proto --python_out=.
+ls object_detection/protos/ -l
+```
+super fast (like I thought it did nothing) but, you should see _pb2.py
+
+#### pycocotools
+should be installed because it's a TF2.x dependency.   If not, see the tutorial installation page - it has instructions to manually install.   On my SageMaker - it did not appear to be there
+```
+# got a fatal error in the make operation - stackoverflow says:  install cython first
+pip install cython
+ls /home/ec2-user/SageMaker/tensorflow/models/research//TensorFlow/models/research/
+# no pycoco
+cp -r pycocotools /home/ec2-user/SageMaker/tensorflow/models/research/
+ls /home/ec2-user/SageMaker/tensorflow/models/research/
+# now you see pycocotools
+
+```
+#### Eval Metrics
+default is Pascal VOC, you can use COCO - see the note in the tutorial
+
+#### Object Detection API
+```
+cd /home/ec2-user/SageMaker/tensorflow/models/research/
+ls -l
+
+cp object_detection/packages/tf2/setup.py .
+ls -l
+
+# failed on dependencies
+# can't conda activate on SageMaker!!
+python -m pip install .
+```
+run through the cp step, then go to the Jupyter notebook:  TF22_Installation and you can do the pip install there.   You have to do it from the Jupyter notebook because I couldn't figure out how to get $conda activate to work from a terminal on Jupyter.   This worked in previous releases but it isn't configured now. 
