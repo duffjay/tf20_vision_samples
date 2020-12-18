@@ -65,3 +65,12 @@ local:  ~/data/furniture_img
 ?? is the data redudant?  /data/img & /data/furniture_img/
 
 kaggle 
+
+## Tensflow 2.x Object Detection Tutorial
+
+### SageMaker
+```
+mkdir /home/ec2-user/SageMaker/tensorflow
+cd /home/ec2-user/SageMaker/tensorflow
+git clone https://github.com/tensorflow/models.git
+```
