@@ -6,6 +6,9 @@ Anaconda
 
 20201210 - Anaconda supports TF 2.2 (not 2.3)
 
+!! ASUS tf22 is really tf24 - this is because the TF step upgraded automatically from 2.x to 2.4
+Dell Laptop tf24 is tf24
+
 ### tf22
 Anaconda managed  
 ```
