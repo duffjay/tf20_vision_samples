@@ -9,6 +9,13 @@ Anaconda
 !! ASUS tf22 is really tf24 - this is because the TF step upgraded automatically from 2.x to 2.4
 Dell Laptop tf24 is tf24
 
+###WARNING:
+- the tutorial setup will upgrade to tf 2.4
+- the tensorboard tutorial will require `$ conda install keras`  This will move to tf 2.3
+- conda install tensorflow-gpu ==> 2.2
+- pip install tensorflow-gpu ==> 2.3
+what a mess!
+
 ### tf22
 Anaconda managed  
 ```
