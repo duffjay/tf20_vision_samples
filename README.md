@@ -37,6 +37,69 @@ using anaconda-navigator, install jupyter
 python -m ipykernel install --user --name tf23 --display-name "Python37 (tf23)"
 create a jupyter notebook to verify
 
+### tf24
+build this environment by following the TensorFlow 2 Object Detection Tutorial.
+The install script will upgrade to TF 2.4.    
+Several installs/scripts will mess with TF version - always check.   If the wrong version get re-installed, TF will run on CPU - not GPU.  That's your first clue you have a problem
+
+remove the corrupted environment:  
+make sure you have not Jupyter servers running
+```
+conda deactivate
+conda activate base
+conda remove --name tf24 --all
+```
+
+assuming you've set it up before (programs are already in the right place):
+```
+conda create -n tf24 python=3.7  
+conda activate tf24  
+conda install jupyter  
+python -m ipykernel install --user --name tf24 --display-name "Python37 (tf24)"
+```
+start Jupyter and verify you have the kernel - etc.  Better to identify a problem here (which is common!)
+
+```
+# missing pre-requisites
+pip install cryptography
+pip install boto
+# install TF 2.2 GPU first - it will upgrade but, the script wants TF 2.2 first
+pip install --ignore-installed --upgrade tensorflow-gpu==2.2.0
+```
+new window - verify Tensorflow - look at the log
+```
+conda activate tf24
+python -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
+# look for GPU:  Created TensorFlow device (in the log)
+```
+Check your Jupyter notebook, you'll see TF 2.2
+
+final + verification
+
+```
+cd ~/projects/tensorflow/models/research/
+python -m pip install .
+
+# I ignored these
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+tensorflow-gpu 2.2.0 requires tensorboard<2.3.0,>=2.2.0, but you have tensorboard 2.4.0 which is incompatible.
+tensorflow-gpu 2.2.0 requires tensorflow-estimator<2.3.0,>=2.2.0, but you have tensorflow-estimator 2.4.0 which is incompatible.
+
+python object_detection/builders/model_builder_tf2_test.py
+# tests passed
+
+# go back and train your model
+cd ~/projects/tensorflow/workspace/training_demo/
+python model_main_tf2.py --model_dir=models/my_ssd_resnet50_v1_fpn --pipeline_config_path=models/my_ssd_resnet50_v1_fpn/laptop_pipeline.config --num_train_steps="30000"
+
+# you'll see in the log - opens CUDA 11.0
+Successfully opened dynamic library libcublas.so.11
+Successfully opened dynamic library libcublasLt.so.11
+Successfully opened dynamic library libcudnn.so.8
+
+
+```
+
 ### using anaconda-navigator
 create environment (tf20) Python 3.7  
 install Jupyter
