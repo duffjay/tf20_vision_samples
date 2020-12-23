@@ -26,6 +26,9 @@ python -m ipykernel install --user --name tf22 --display-name "Python37 (tf22)"
 ```
 create a jupyter notebook (from tf22) to verify
 
+tf 2.2  
+keras 2.4.3  
+
 ### tf23
 Expect to drop this someday (when Anaconda supports 2.3)  
 conda create -n tf23 python=3.7  
