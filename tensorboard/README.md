@@ -39,3 +39,4 @@ pip install tensorflow-gpu
 pip install matplotlib
 pip instal scikit-learn
 ```
+ 
