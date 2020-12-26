@@ -19,3 +19,23 @@ conda install tensflow-gpu
 conda install matplotlib
 conda install -c conda-forge scikit-learn
 ```
+## pip - tb24
+note - pip installs tensororflow-gpu version 2.4 (20201226)
+
+```
+conda create -n tb24 python=3.7  
+conda activate tb24  
+conda install jupyter  
+python -m ipykernel install --user --name tb24 --display-name "Python37 (tb24)" 
+```
+
+```
+pip install boto
+pip install pyasn1
+pip install matplotlib
+pip install scikit-learn
+pip install cryptography
+pip install tensorflow-gpu
+pip install matplotlib
+pip instal scikit-learn
+```
